@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Interview - InterviewAI</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="interview-page">
+    <div class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-robot me-2"></i>InterviewAI
+            </a>
+        </div>
+    </div>
+
+    <!-- Login Screen -->
+    <div id="loginScreen" class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h3><i class="fas fa-user-circle me-2"></i>Candidate Interview Login</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="loginForm">
+                            <div class="mb-4">
+                                <label for="candidateName" class="form-label">Enter your name as provided by the recruiter</label>
+                                <input type="text" class="form-control" id="candidateName" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" id="loginButton" class="btn btn-primary btn-lg">
+                                    Start Interview
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interview Screen -->
+    <div id="interviewScreen" class="container mt-4" style="display: none;">
+        <div class="row">
+            <div class="col-md-8">
+                <!-- Question Card -->
+                <div class="card shadow mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h4><i class="fas fa-question-circle me-2"></i>Current Question</h4>
+                        <span id="questionCategory" class="badge bg-info">Category: Technical</span>
+                    </div>
+                    <div class="card-body">
+                        <h5 id="questionText" class="mb-3">Loading question...</h5>
+                        
+                        <!-- Progress bar -->
+                        <div class="progress mb-3">
+                            <div id="progressBar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <p id="progressText" class="text-muted">Question 1 of 5</p>
+                        
+                        <!-- Response Type Selection -->
+                        <div class="card mb-3">
+                            <div class="card-header bg-light">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h5 class="mb-0">Your Response</h5>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="voiceToggle">
+                                        <label class="form-check-label" for="voiceToggle">Enable Voice</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <ul class="nav nav-pills mb-3" id="responseOptions">
+                                    <li class="nav-item">
+                                        <button id="textResponseOption" class="nav-link active" data-option="text">
+                                            <i class="fas fa-keyboard me-1"></i>Text Response
+                                        </button>
+                                    </li>
+                                    <li class="nav-item">
+                                        <button id="voiceResponseOption" class="nav-link" data-option="voice">
+                                            <i class="fas fa-microphone me-1"></i>Voice Response
+                                        </button>
+                                    </li>
+                                </ul>
+                                
+                                <!-- Text Response Area -->
+                                <div id="textResponseContainer">
+                                    <form id="textResponseForm">
+                                        <div class="mb-3">
+                                            <textarea id="textResponseInput" class="form-control" rows="5" placeholder="Type your answer here..." required></textarea>
+                                        </div>
+                                        <button type="submit" id="submitTextBtn" class="btn btn-primary">
+                                            Submit Answer
+                                        </button>
+                                    </form>
+                                </div>
+                                
+                                <!-- Voice Response Area -->
+                                <div id="voiceResponseContainer" style="display: none;">
+                                    <div class="text-center mb-3">
+                                        <p id="recordingStatus">Click the button to start recording your answer</p>
+                                        <div id="recordingTimer" class="badge bg-danger mb-2">00:00</div>
+                                        <div class="d-grid gap-2 col-6 mx-auto">
+                                            <button id="startRecordingBtn" class="btn btn-danger">
+                                                <i class="fas fa-microphone me-1"></i>Start Recording
+                                            </button>
+                                            <button id="stopRecordingBtn" class="btn btn-secondary" style="display: none;">
+                                                <i class="fas fa-stop-circle me-1"></i>Stop Recording
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Speak Question Button -->
+                        <button id="speakQuestionBtn" class="btn btn-outline-primary">
+                            <i class="fas fa-volume-up me-1"></i>Speak Question
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Feedback Card -->
+                <div id="feedbackContainer" class="card shadow mb-4" style="display: none;">
+                    <div class="card-header bg-info text-white">
+                        <h5><i class="fas fa-comment me-1"></i>Feedback on Previous Answer</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h6>Score:</h6>
+                            <span id="feedbackScore" class="badge bg-success">8/10</span>
+                        </div>
+                        <p id="feedbackText">Loading feedback...</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <!-- Camera Preview -->
+                <div class="card shadow mb-4">
+                    <div class="card-header bg-gradient bg-primary text-white">
+                        <h5><i class="fas fa-video me-1"></i>Camera Monitoring</h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="camera-container position-relative">
+                            <video id="candidateVideo" autoplay muted playsinline class="img-fluid w-100"></video>
+                            <div id="cameraStatus" class="camera-overlay position-absolute top-50 start-50 translate-middle bg-dark bg-opacity-75 text-white p-3 rounded">
+                                <div id="cameraConnecting">
+                                    <i class="fas fa-circle-notch fa-spin mb-2 d-block fa-2x"></i>
+                                    <div>Connecting camera...</div>
+                                </div>
+                                <div id="cameraError" style="display: none;">
+                                    <i class="fas fa-exclamation-triangle mb-2 d-block fa-2x text-warning"></i>
+                                    <div id="cameraErrorMessage">Camera access denied</div>
+                                    <button id="retryCameraBtn" class="btn btn-outline-light btn-sm mt-2">
+                                        <i class="fas fa-redo-alt me-1"></i>Retry
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="camera-controls p-2 d-flex justify-content-between align-items-center bg-dark bg-opacity-50 text-white">
+                                <span id="cameraIndicator" class="recording-status">
+                                    <i class="fas fa-circle text-danger blink"></i> Monitoring
+                                </span>
+                                <button id="fullscreenCamera" class="btn btn-sm btn-outline-light">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-3">
+                            <div class="alert alert-info mb-0">
+                                <small>
+                                    <i class="fas fa-info-circle me-1"></i> Your camera is being used to monitor the interview. Please ensure your face is visible at all times.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tips Card -->
+                <div class="card shadow">
+                    <div class="card-header bg-info text-white">
+                        <h5><i class="fas fa-lightbulb me-1"></i>Interview Tips</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Speak clearly and concisely</li>
+                            <li class="list-group-item">Take a moment to think before answering</li>
+                            <li class="list-group-item">Provide specific examples when possible</li>
+                            <li class="list-group-item">Stay focused on your camera</li>
+                            <li class="list-group-item">Use the full time allowed for each answer</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Completion Screen -->
+    <div id="completionScreen" class="container mt-5" style="display: none;">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow text-center">
+                    <div class="card-header bg-success text-white">
+                        <h3><i class="fas fa-check-circle me-2"></i>Interview Completed</h3>
+                    </div>
+                    <div class="card-body py-5">
+                        <i class="fas fa-thumbs-up fa-4x mb-3 text-success"></i>
+                        <h4 class="mb-4">Thank you for completing your interview!</h4>
+                        <p class="lead mb-4">Your responses have been recorded and will be reviewed by the hiring team.</p>
+                        <a href="index.html" class="btn btn-primary">Return to Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/api.js"></script>
+    <script src="js/candidate.js"></script>
+</body>
+</html> 

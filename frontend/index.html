@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InterviewAI - Smart Interview Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-robot me-2"></i>InterviewAI
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-it-works">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-light ms-2" href="admin.html">Admin Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary ms-2" href="interview.html">Candidate Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content" data-aos="fade-right">
+                    <h1 class="display-4 fw-bold mb-4">Revolutionize Your <span class="text-gradient">Interview Process</span></h1>
+                    <p class="lead mb-4">
+                        InterviewAI combines cutting-edge artificial intelligence with human-like interactions to create
+                        the most effective, engaging, and unbiased interview experience.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="admin.html" class="btn btn-lg btn-outline-light me-3">
+                            <i class="fas fa-user-tie me-2"></i>For Recruiters
+                        </a>
+                        <a href="interview.html" class="btn btn-lg btn-primary pulse-btn">
+                            <i class="fas fa-user-graduate me-2"></i>For Candidates
+                        </a>
+                    </div>
+                    <div class="mt-4 hero-stats">
+                        <div class="d-flex flex-wrap">
+                            <div class="me-4 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <span class="stat-number">98%</span>
+                                    <span class="stat-label ms-2">Accuracy</span>
+                                </div>
+                            </div>
+                            <div class="me-4 mb-3">
+                                <div class="d-flex align-items-center">
+                                    <span class="stat-number">75%</span>
+                                    <span class="stat-label ms-2">Time Saved</span>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex align-items-center">
+                                    <span class="stat-number">5K+</span>
+                                    <span class="stat-label ms-2">Interviews</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 position-relative" data-aos="fade-left">
+                    <div class="hero-image-container">
+                        <img src="images/interview-hero.svg" alt="AI Interview Platform" class="img-fluid hero-image">
+                        <div class="floating-card card1">
+                            <i class="fas fa-microphone text-primary"></i> 
+                            <span>Voice Powered</span>
+                        </div>
+                        <div class="floating-card card2">
+                            <i class="fas fa-brain text-primary"></i> 
+                            <span>AI Intelligence</span>
+                        </div>
+                        <div class="floating-card card3">
+                            <i class="fas fa-chart-line text-primary"></i> 
+                            <span>Smart Analytics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-shape"></div>
+    </header>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="text-center mb-5">Why Choose InterviewAI?</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>AI-Powered Interviews</h3>
+                        <p>Our platform uses advanced AI to conduct interviews, ask relevant follow-up questions, and provide objective assessments.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-microphone-alt"></i>
+                        </div>
+                        <h3>Voice Processing</h3>
+                        <p>Natural voice interaction allows candidates to respond verbally, creating a more authentic interview experience.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Candidate Monitoring</h3>
+                        <p>Optional proctoring features ensure interview integrity by detecting suspicious behaviors.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>Detailed Analytics</h3>
+                        <p>Get comprehensive insights on candidate performance with detailed scoring and feedback.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Resume Analysis</h3>
+                        <p>Our AI analyzes candidate resumes to generate relevant and personalized interview questions.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3>Secure & Private</h3>
+                        <p>All interviews are encrypted and securely stored, ensuring candidate privacy and data protection.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">How It Works</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">1</div>
+                    <div class="timeline-content">
+                        <h4>Admin Setup</h4>
+                        <p>Recruiters set up interview parameters, upload candidate résumés, and define question categories.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">2</div>
+                    <div class="timeline-content">
+                        <h4>Candidate Login</h4>
+                        <p>Candidates receive a link to access the platform and begin their interview at the scheduled time.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">3</div>
+                    <div class="timeline-content">
+                        <h4>AI Interview</h4>
+                        <p>The AI conducts the interview, asking questions and providing real-time feedback based on responses.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">4</div>
+                    <div class="timeline-content">
+                        <h4>Result Analysis</h4>
+                        <p>Recruiters receive detailed reports with scores, feedback, and monitoring data for each candidate.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="camera-feature" class="camera-feature py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="camera-demo-container">
+                        <div class="camera-demo-screen">
+                            <div class="camera-header">
+                                <span class="camera-title"><i class="fas fa-video me-2"></i>Live Monitoring</span>
+                                <div class="camera-controls-demo">
+                                    <span class="recording-indicator"></span>
+                                </div>
+                            </div>
+                            <div class="camera-content">
+                                <img src="images/camera-preview.jpg" alt="Camera Monitoring Preview" class="img-fluid">
+                                <div class="camera-overlay-tech">
+                                    <div class="tech-indicator eye-tracking">Eye Tracking</div>
+                                    <div class="tech-indicator head-pose">Head Position</div>
+                                    <div class="tech-indicator mobile-detection">Device Detection</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="mb-4">Advanced Monitoring Technology</h2>
+                    <p class="lead mb-4">Our cutting-edge camera monitoring system ensures interview integrity while providing a transparent experience.</p>
+                    
+                    <div class="monitoring-features">
+                        <div class="monitoring-feature mb-3">
+                            <div class="feature-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h5>Eye Movement Tracking</h5>
+                                <p>Detects when candidates may be looking away from the screen to maintain focus during interviews.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="monitoring-feature mb-3">
+                            <div class="feature-icon">
+                                <i class="fas fa-street-view"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h5>Head Pose Estimation</h5>
+                                <p>Advanced algorithms track head position to ensure candidates remain engaged throughout.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="monitoring-feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h5>Mobile Device Detection</h5>
+                                <p>Identifies potential unauthorized devices to maintain interview fairness and integrity.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="interview.html" class="btn btn-primary mt-4">
+                        <i class="fas fa-camera me-2"></i>Experience It Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>InterviewAI</h5>
+                    <p>Transforming the interview process with artificial intelligence and advanced monitoring.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="admin.html">Admin Portal</a></li>
+                        <li><a href="interview.html">Candidate Portal</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <address>
+                        <i class="fas fa-envelope"></i> info@interviewai.com<br>
+                        <i class="fas fa-phone"></i> +1 (555) 123-4567<br>
+                        <i class="fas fa-map-marker-alt"></i> 123 Tech Street, Silicon Valley
+                    </address>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>&copy; 2025 InterviewAI. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
